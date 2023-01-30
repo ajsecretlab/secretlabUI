@@ -1,4 +1,9 @@
 export const parameters = {
+  options: {
+    storySort: {
+      order: ["Atoms", "Examples"],
+    },
+  },
   actions: { argTypesRegex: "^on[A-Z].*" },
   controls: {
     matchers: {
@@ -6,4 +11,4 @@ export const parameters = {
       date: /Date$/,
     },
   },
-}
+};
