@@ -1,12 +1,22 @@
-export const variantStyles = {
-  outlined: "bg-transparent text-black",
-  contained: "bg-gray",
+export type variantType = "outlined" | "contained";
+export type colorType =
+  | "default"
+  | "primary"
+  | "secondary"
+  | "success"
+  | "error"
+  | "info"
+  | "warning";
+export type sizeType = "small" | "medium" | "large";
+
+export const variantStyles = (variant: variantType, color: colorType) => {
+  if (variant == "outlined")
+    return `border border-${color} bg-white text-gray-500`;
+  return;
 };
 
-const you = "800";
-
-export const colorStyles = {
-  default: `bg-default border-default bg-red-${you}`,
+export const colorStyles: { [K in colorType]: string } = {
+  default: `bg-default border-default`,
   primary: "bg-primary border-primary",
   secondary: "bg-secondary border-secondary",
   success: "bg-success border-success",
@@ -15,8 +25,8 @@ export const colorStyles = {
   warning: "bg-warning border-warning",
 };
 
-export const sizeStyles = {
+export const sizeStyles: { [K in sizeType]: string } = {
   small: "py-1 px-3",
-  medium: "p-20",
+  medium: "py-2 px-4",
   large: "py-4 px-8",
 };
