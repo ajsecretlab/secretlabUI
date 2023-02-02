@@ -4,7 +4,7 @@ import { Text } from "../index";
 
 describe("App", () => {
   it("should work as expected", () => {
-    render(<Text name="test" />);
+    render(<Text>Test</Text>);
     expect(1 + 1).toBe(2);
   });
 });
