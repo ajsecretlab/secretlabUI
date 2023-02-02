@@ -33,7 +33,7 @@ export const Button = forwardRef<Ref, IButton>(
           ref={ref}
           onClick={onClick}
           className={classNames(
-            "rounded-full text-white hover:opacity-80",
+            "rounded-full text-white hover:opacity-80 ",
             variantStyles[variant],
             colorStyles[color],
             sizeStyles[size],

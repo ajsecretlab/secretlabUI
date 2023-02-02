@@ -1,10 +1,12 @@
 export const variantStyles = {
-  outlined: "bg-transparent text-black border",
+  outlined: "bg-transparent text-black",
   contained: "bg-gray",
 };
 
+const you = "800";
+
 export const colorStyles = {
-  default: "bg-default border-default",
+  default: `bg-default border-default bg-red-${you}`,
   primary: "bg-primary border-primary",
   secondary: "bg-secondary border-secondary",
   success: "bg-success border-success",
@@ -15,6 +17,6 @@ export const colorStyles = {
 
 export const sizeStyles = {
   small: "py-1 px-3",
-  medium: "py-2 px-4",
+  medium: "p-20",
   large: "py-4 px-8",
 };
