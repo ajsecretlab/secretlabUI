@@ -1,20 +1,14 @@
 import { describe, it, expect } from "vitest";
 import { render, screen } from "@testing-library/react";
-import { Text } from "../index";
+import { Text } from ".";
 
-describe("App", () => {
-  it("should work as expected", () => {
-    render(<Text>Test</Text>);
-    expect(1 + 1).toBe(2);
-  });
-});
-
-describe("something truthy and falsy", () => {
-  it("true to be true", () => {
-    expect(true).toBe(true);
-  });
-
-  it("false to be false", () => {
-    expect(false).toBe(false);
+describe("Atom/TextBlock", () => {
+  it("should generate paragraph tag when type paragraph is selected", () => {
+    render(
+      <Text variant="paragraph" classes="border p-5">
+        Test
+      </Text>
+    );
+    expect(screen.getByTestId("text-block-paragraph")).toBeInTheDocument();
   });
 });
