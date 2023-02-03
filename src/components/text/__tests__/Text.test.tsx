@@ -1,6 +1,6 @@
 import { describe, it, expect } from "vitest";
-import { render, screen } from "@testing-library/react";
-import { Text } from "../index";
+import { render } from "@testing-library/react";
+import { Text } from "../Text";
 
 describe("App", () => {
   it("should work as expected", () => {
