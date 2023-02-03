@@ -1,4 +1,3 @@
-import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 import { colorStyles } from "./Text.styles";
 
@@ -20,7 +19,7 @@ const Template: ComponentStory<typeof Text> = (args) => <Text {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
-  children: "This is a text component with type",
+  children: "This is a text component",
 };
 
 export const Header = Template.bind({});

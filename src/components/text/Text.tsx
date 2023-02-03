@@ -14,7 +14,7 @@ export const Text = ({
   children,
   classes,
   component,
-  variant = "default",
+  variant,
   color,
 }: IText) => {
   let Element;
