@@ -2,6 +2,7 @@ import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 import { Avatar } from "./Avatar";
+import { sizeStyles } from "./Avatar.styles";
 
 export default {
   title: "Atoms/Avatar",
@@ -14,7 +15,13 @@ export default {
       control: "text",
     },
     alt: {
+      description: "Alternate text for accessiblity purposes",
       control: "text",
+    },
+    size: {
+      defaultValue: "medium",
+      option: Object.keys(sizeStyles),
+      control: "radio",
     },
   },
 } as ComponentMeta<typeof Avatar>;
@@ -26,4 +33,5 @@ Default.args = {
   src: "https://images.secretlab.co/theme/common/technology-review-portrait-2-min.jpg",
   classes: "lazy lazy-fade",
   alt: "Dr. James Goh",
+  size: "medium",
 };
