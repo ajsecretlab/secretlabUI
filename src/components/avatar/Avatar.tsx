@@ -2,7 +2,7 @@ import React from "react";
 import classnames from "classnames";
 import { sizeType, sizeStyles } from "./Avatar.styles";
 
-export interface AvatarI {
+export interface IAvatar {
   src: string;
   alt: string;
   classes?: string;
@@ -14,7 +14,7 @@ export const Avatar = ({
   alt,
   classes = "",
   size = "medium",
-}: AvatarI) => {
+}: IAvatar) => {
   return (
     <img
       data-testid="avatar"
