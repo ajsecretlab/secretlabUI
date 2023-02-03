@@ -2,7 +2,7 @@ import React from "react";
 import classNames from "classnames";
 import { variantStyles, colorStyles } from "./Text.styles";
 
-export interface TextI {
+export interface IText {
   component?: string;
   variant?: keyof typeof variantStyles;
   color?: keyof typeof colorStyles;
@@ -16,7 +16,7 @@ export const Text = ({
   component,
   variant = "default",
   color,
-}: TextI) => {
+}: IText) => {
   let Element;
   if ((classes || color) && !variant && !component) {
     Element = React.createElement(
