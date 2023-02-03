@@ -2,11 +2,9 @@ name: CI/CD
 
 push:
   branches: [main]
-  paths-ignore: ["**/README.md"]
 pull_request:
   branches: [main]
   types: [opened, synchronize]
-  paths-ignore: ["**/README.md"]
 
 jobs:
   lint:
