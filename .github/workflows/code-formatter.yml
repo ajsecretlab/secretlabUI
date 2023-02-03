@@ -1,9 +1,6 @@
-name: Main Release
+name: Extra code format
 
-on:
-  pull_request:
-    branches: [main]
-    types: -closed
+on: [push, pull_request]
 
 jobs:
   build_test:
@@ -11,7 +8,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [14.x, 16.x]
+        node-version: [16.x]
 
     steps:
       - uses: actions/checkout@v2
@@ -22,5 +19,4 @@ jobs:
       - name: npm ci, build and test
         run: |
           npm ci
-          npm run build --if-present
-          npm test
+          npm run prettier --if-present

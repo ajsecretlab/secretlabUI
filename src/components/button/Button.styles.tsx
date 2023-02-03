@@ -10,8 +10,9 @@ export type colorType =
 export type sizeType = "small" | "medium" | "large";
 
 export const variantStyles = (variant: variantType, color: colorType) => {
+  console.log(variant);
   if (variant == "outlined")
-    return `border border-${color} bg-white text-gray-500`;
+    return `border border-${color} bg-transparent text-gray-900`;
   return;
 };
 
