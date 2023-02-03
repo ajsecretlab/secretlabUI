@@ -1,5 +1,4 @@
 const colors = require("tailwindcss/colors");
-const theme = require("secretlabui/theme");
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   mode: "jit",
