@@ -1,4 +1,15 @@
-export const variantStyles = {
+export type variantType =
+  | "default"
+  | "small"
+  | "h1"
+  | "h2"
+  | "h3"
+  | "h4"
+  | "h5"
+  | "h6";
+export type colorType = "default" | "primary" | "secondary" | "disabled";
+
+export const variantStyles: { [K in variantType]: string } = {
   default: "",
   small: "text-sm",
   h1: "text-5xl font-bold",
@@ -9,7 +20,7 @@ export const variantStyles = {
   h6: "text-lg font-bold",
 };
 
-export const colorStyles = {
+export const colorStyles: { [K in colorType]: string } = {
   default: "",
   primary: "text-primary",
   secondary: "text-secondary",

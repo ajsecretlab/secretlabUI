@@ -9,6 +9,7 @@ export default {
   component: Text,
   argTypes: {
     color: {
+      defaultValue: "default",
       options: Object.keys(colorStyles),
       control: { type: "radio" },
     },
@@ -26,7 +27,7 @@ export const Header = Template.bind({});
 Header.args = {
   children: (
     <>
-      This is a header <Text color="primary">hello</Text>
+      This is a header <Text color="primary">with primary text</Text>
     </>
   ),
   color: "default",
