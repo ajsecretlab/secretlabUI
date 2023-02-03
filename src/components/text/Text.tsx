@@ -14,7 +14,7 @@ export const Text = ({
   children,
   classes,
   component,
-  variant,
+  variant = "default",
   color,
 }: TextI) => {
   let Element;
@@ -23,6 +23,7 @@ export const Text = ({
       "span",
       {
         className: classNames(color && colorStyles[color], classes),
+        "data-testid": "span",
       },
       children
     );
@@ -32,22 +33,21 @@ export const Text = ({
 
   if (variant) {
     Element = React.createElement(
-      variant,
-      !component
-        ? {
-            className: classNames(
-              color && colorStyles[color],
-              variantStyles[variant],
-              classes
-            ),
-          }
-        : {},
+      variant !== "default" ? variant : "span",
+      {
+        className: classNames(
+          color && colorStyles[color],
+          variantStyles[variant],
+          classes
+        ),
+        "data-testid": variant !== "default" ? variant : "span",
+      },
       Element
     );
   }
 
   if (component) {
-    Element = React.createElement(component, { className: classes }, Element);
+    Element = React.createElement(component, {}, Element);
   }
 
   return <>{Element}</>;
