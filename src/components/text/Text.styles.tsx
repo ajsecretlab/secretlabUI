@@ -6,7 +6,9 @@ export type variantType =
   | "h3"
   | "h4"
   | "h5"
-  | "h6";
+  | "h6"
+  | "sup"
+  | "sub";
 export type colorType = "default" | "primary" | "secondary" | "disabled";
 
 export const variantStyles: { [K in variantType]: string } = {
@@ -18,6 +20,8 @@ export const variantStyles: { [K in variantType]: string } = {
   h4: "text-2xl font-bold",
   h5: "text-xl font-bold",
   h6: "text-lg font-bold",
+  sup: "",
+  sub: "",
 };
 
 export const colorStyles: { [K in colorType]: string } = {
