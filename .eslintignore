@@ -5,4 +5,4 @@ dist-ssr
 *.local
 node_modules/*
 !.storybook
-vite.config.ts
+postcss.config.cjs
