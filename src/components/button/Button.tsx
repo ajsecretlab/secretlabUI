@@ -4,18 +4,19 @@ import {
   colorStyles,
   sizeStyles,
   variantStyles,
-  variantType,
-  sizeType,
-  colorType,
+  VariantType,
+  SizeType,
+  ColorType,
 } from "./Button.styles";
 
 export interface IButton {
   children: ReactNode;
   disabled: boolean;
-  color: colorType;
-  size: sizeType;
-  variant: variantType;
+  color: ColorType;
+  size: SizeType;
+  variant: VariantType;
   onClick?: () => void;
+  type: string;
   classes: string;
 }
 
@@ -29,6 +30,7 @@ export const Button = forwardRef<Ref, RequiredOne<IButton, "children">>(
       variant = "contained",
       color = "default",
       size = "medium",
+      type,
       classes,
       onClick,
       disabled,
@@ -37,6 +39,7 @@ export const Button = forwardRef<Ref, RequiredOne<IButton, "children">>(
   ) => {
     return (
       <button
+        type="button"
         ref={ref}
         onClick={onClick}
         className={classNames(
@@ -54,3 +57,5 @@ export const Button = forwardRef<Ref, RequiredOne<IButton, "children">>(
     );
   }
 );
+
+Button.displayName = "Button";

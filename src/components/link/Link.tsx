@@ -18,3 +18,5 @@ export const Link = forwardRef<Ref, IAnchor>(
     );
   }
 );
+
+Link.displayName = "Link";

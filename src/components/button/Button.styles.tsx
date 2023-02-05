@@ -1,5 +1,5 @@
-export type variantType = "outlined" | "contained";
-export type colorType =
+export type VariantType = "outlined" | "contained";
+export type ColorType =
   | "default"
   | "primary"
   | "secondary"
@@ -7,16 +7,15 @@ export type colorType =
   | "error"
   | "info"
   | "warning";
-export type sizeType = "small" | "medium" | "large";
+export type SizeType = "small" | "medium" | "large";
 
-export const variantStyles = (variant: variantType, color: colorType) => {
-  console.log(variant);
-  if (variant == "outlined")
+export const variantStyles = (variant: VariantType, color: ColorType) => {
+  if (variant === "outlined")
     return `border border-${color} bg-transparent text-gray-900`;
-  return;
+  return "";
 };
 
-export const colorStyles: { [K in colorType]: string } = {
+export const colorStyles: { [K in ColorType]: string } = {
   default: `bg-default border-default`,
   primary: "bg-primary border-primary",
   secondary: "bg-secondary border-secondary",
@@ -26,7 +25,7 @@ export const colorStyles: { [K in colorType]: string } = {
   warning: "bg-warning border-warning",
 };
 
-export const sizeStyles: { [K in sizeType]: string } = {
+export const sizeStyles: { [K in SizeType]: string } = {
   small: "py-1 px-3",
   medium: "py-2 px-4",
   large: "py-4 px-8",
