@@ -1,3 +1,3 @@
 export type Theme = {
-  config: any;
+    config: any;
 };

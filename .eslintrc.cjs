@@ -27,5 +27,7 @@ module.exports = {
     "react/jsx-props-no-spreading": 0,
     "react/function-component-definition": 0,
     "react/prop-types": 0,
+    "storybook/hierarchy-separator": "error",
+    "storybook/default-exports": "off",
   },
 };
