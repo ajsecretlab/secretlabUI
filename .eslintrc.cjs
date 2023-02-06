@@ -1,14 +1,19 @@
+/* eslint-disable no-undef */
+
 module.exports = {
   env: {
     browser: true,
     es2021: true,
   },
+  settings: {
+    react: {
+      version: "detect",
+    },
+  },
   extends: [
-    // removing "eslint:recommended" for arirbnb recommeded
-    "airbnb",
-    "airbnb-typescript",
-    "airbnb/hooks",
+    "eslint:recommended",
     "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:prettier/recommended",
     "plugin:storybook/recommended",
