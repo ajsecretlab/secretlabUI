@@ -7,7 +7,7 @@ export interface IImage {
   classes?: string;
   lazyLoad?: boolean;
   src: string;
-  variant: variantType;
+  variant?: variantType;
 }
 
 export type Ref = HTMLImageElement;
