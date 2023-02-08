@@ -1,4 +1,4 @@
-import React from "react";
+import React, { forwardRef } from "react";
 import classNames from "classnames";
 import { variantStyles, colorStyles } from "./Text.styles";
 
@@ -10,45 +10,45 @@ export interface IText {
   classes?: string;
 }
 
-export const Text = ({
-  children,
-  classes,
-  component,
-  variant,
-  color,
-}: IText) => {
-  let Element;
-  if ((classes || color) && !variant && !component) {
-    Element = React.createElement(
-      "span",
-      {
-        className: classNames(color && colorStyles[color], classes),
-        "data-testid": "span",
-      },
-      children
-    );
-  } else {
-    Element = children;
-  }
+export type Ref = HTMLSpanElement | HTMLHeadingElement;
 
-  if (variant) {
-    Element = React.createElement(
-      variant !== "default" ? variant : "span",
-      {
-        className: classNames(
-          color && colorStyles[color],
-          variantStyles[variant],
-          classes
-        ),
-        "data-testid": variant !== "default" ? variant : "span",
-      },
-      Element
-    );
-  }
+export const Text = forwardRef<Ref, IText>(
+  ({ children, classes, component, variant, color }, ref) => {
+    let Element;
+    if ((classes || color) && !variant && !component) {
+      Element = React.createElement(
+        "span",
+        {
+          ref,
+          className: classNames(color && colorStyles[color], classes),
+          "data-testid": "span",
+        },
+        children
+      );
+    } else {
+      Element = children;
+    }
 
-  if (component) {
-    Element = React.createElement(component, {}, Element);
-  }
+    if (variant) {
+      Element = React.createElement(
+        variant !== "default" ? variant : "span",
+        {
+          ref,
+          className: classNames(
+            color && colorStyles[color],
+            variantStyles[variant],
+            classes
+          ),
+          "data-testid": variant !== "default" ? variant : "span",
+        },
+        Element
+      );
+    }
 
-  return <>{Element}</>;
-};
+    if (component) {
+      Element = React.createElement(component, {}, Element);
+    }
+
+    return <>{Element}</>;
+  }
+);
